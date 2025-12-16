@@ -28,6 +28,8 @@ interface TranslationWidgetProps {
   apiKey?: string;
   targetElementId?: string;
   position?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
+  onLanguageChange?: (lang: string) => void;
+  localLanguages?: string[];
 }
 
 export function TranslationWidget({
@@ -36,6 +38,8 @@ export function TranslationWidget({
   apiKey,
   targetElementId = 'translatable-content',
   position = 'top-right',
+  onLanguageChange,
+  localLanguages = [],
 }: TranslationWidgetProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [currentLang, setCurrentLang] = useState(defaultLang);
@@ -72,6 +76,16 @@ export function TranslationWidget({
     if (!domTranslator || isTranslating || !isInitialized) return;
 
     setError(null);
+    setIsOpen(false);
+
+    const isLocalLanguage = localLanguages.includes(langCode);
+
+    if (isLocalLanguage) {
+      setCurrentLang(langCode);
+      onLanguageChange?.(langCode);
+      return;
+    }
+
     setIsTranslating(true);
     setProgress(0);
 
@@ -80,7 +94,7 @@ export function TranslationWidget({
         setProgress(Math.min(prog, 100));
       });
       setCurrentLang(langCode);
-      setIsOpen(false);
+      onLanguageChange?.(langCode);
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Translation failed';
 
@@ -152,25 +166,35 @@ export function TranslationWidget({
                 Select Language
               </p>
             </div>
-            {LANGUAGES.map((lang) => (
-              <button
-                key={lang.code}
-                onClick={() => handleLanguageChange(lang.code)}
-                className={`w-full text-left px-4 py-2.5 hover:bg-gray-50 transition-colors flex items-center justify-between group ${
-                  currentLang === lang.code ? 'bg-blue-50' : ''
-                }`}
-              >
-                <div className="flex flex-col">
-                  <span className="text-sm font-medium text-gray-900">
-                    {lang.nativeName}
-                  </span>
-                  <span className="text-xs text-gray-500">{lang.name}</span>
-                </div>
-                {currentLang === lang.code && (
-                  <Check className="w-4 h-4 text-blue-600" />
-                )}
-              </button>
-            ))}
+            {LANGUAGES.map((lang) => {
+              const isLocal = localLanguages.includes(lang.code);
+              return (
+                <button
+                  key={lang.code}
+                  onClick={() => handleLanguageChange(lang.code)}
+                  className={`w-full text-left px-4 py-2.5 hover:bg-gray-50 transition-colors flex items-center justify-between group ${
+                    currentLang === lang.code ? 'bg-blue-50' : ''
+                  }`}
+                >
+                  <div className="flex flex-col">
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm font-medium text-gray-900">
+                        {lang.nativeName}
+                      </span>
+                      {isLocal && (
+                        <span className="text-xs bg-green-100 text-green-700 px-1.5 py-0.5 rounded font-medium">
+                          Instant
+                        </span>
+                      )}
+                    </div>
+                    <span className="text-xs text-gray-500">{lang.name}</span>
+                  </div>
+                  {currentLang === lang.code && (
+                    <Check className="w-4 h-4 text-blue-600" />
+                  )}
+                </button>
+              );
+            })}
           </div>
         )}
 
