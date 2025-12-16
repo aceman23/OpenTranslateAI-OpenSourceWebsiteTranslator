@@ -33,34 +33,59 @@ export class TranslationService {
       return this.cache[cacheKey];
     }
 
-    try {
-      const response = await fetch(this.config.apiUrl, {
-        method: 'POST',
-        body: JSON.stringify({
-          q: text,
-          source: sourceLang,
-          target: targetLang,
-          format: 'text',
-          api_key: this.config.apiKey,
-        }),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
+    const maxRetries = 2;
+    let lastError: Error | null = null;
 
-      if (!response.ok) {
-        throw new Error(`Translation failed: ${response.statusText}`);
+    for (let attempt = 0; attempt <= maxRetries; attempt++) {
+      try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 30000);
+
+        const response = await fetch(this.config.apiUrl, {
+          method: 'POST',
+          body: JSON.stringify({
+            q: text,
+            source: sourceLang,
+            target: targetLang,
+            format: 'text',
+            api_key: this.config.apiKey,
+          }),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          signal: controller.signal,
+        });
+
+        clearTimeout(timeoutId);
+
+        if (!response.ok) {
+          const errorData = await response.json().catch(() => ({}));
+          throw new Error(
+            errorData.error || `Translation API error: ${response.status} ${response.statusText}`
+          );
+        }
+
+        const data = await response.json();
+        const translated = data.translatedText;
+
+        if (!translated) {
+          throw new Error('No translation returned from API');
+        }
+
+        this.cache[cacheKey] = translated;
+        return translated;
+      } catch (error) {
+        lastError = error as Error;
+        console.error(`Translation attempt ${attempt + 1} failed:`, error);
+
+        if (attempt < maxRetries) {
+          await new Promise((resolve) => setTimeout(resolve, 1000 * (attempt + 1)));
+        }
       }
-
-      const data = await response.json();
-      const translated = data.translatedText;
-
-      this.cache[cacheKey] = translated;
-      return translated;
-    } catch (error) {
-      console.error('Translation error:', error);
-      return text;
     }
+
+    console.error('Translation failed after all retries:', lastError);
+    throw lastError || new Error('Translation failed');
   }
 
   async translateBatch(
@@ -74,5 +99,18 @@ export class TranslationService {
 
   clearCache(): void {
     this.cache = {};
+  }
+
+  async testConnection(): Promise<{ success: boolean; error?: string }> {
+    try {
+      const testText = 'Hello';
+      await this.translate(testText, 'en', 'es');
+      return { success: true };
+    } catch (error) {
+      return {
+        success: false,
+        error: error instanceof Error ? error.message : 'Unknown error',
+      };
+    }
   }
 }

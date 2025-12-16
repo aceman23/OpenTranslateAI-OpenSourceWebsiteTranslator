@@ -1,4 +1,5 @@
 import { TranslationWidget } from './components/TranslationWidget';
+import { TranslationDebug } from './components/TranslationDebug';
 import { DemoContent } from './components/DemoContent';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
         targetElementId="translatable-content"
         position="top-right"
       />
+      <TranslationDebug />
       <DemoContent />
     </>
   );

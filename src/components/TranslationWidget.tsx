@@ -43,21 +43,33 @@ export function TranslationWidget({
   const [progress, setProgress] = useState(0);
   const [error, setError] = useState<string | null>(null);
   const [domTranslator, setDomTranslator] = useState<DOMTranslator | null>(null);
+  const [isInitialized, setIsInitialized] = useState(false);
 
   useEffect(() => {
-    const translationService = new TranslationService({ apiUrl, apiKey });
-    const translator = new DOMTranslator(translationService, defaultLang);
+    const initTranslator = async () => {
+      try {
+        const translationService = new TranslationService({ apiUrl, apiKey });
+        const translator = new DOMTranslator(translationService, defaultLang);
 
-    const targetElement = document.getElementById(targetElementId);
-    if (targetElement) {
-      translator.initialize(targetElement);
-    }
+        const targetElement = document.getElementById(targetElementId);
+        if (targetElement) {
+          await translator.initialize(targetElement);
+          setDomTranslator(translator);
+          setIsInitialized(true);
+        } else {
+          setError(`Target element #${targetElementId} not found`);
+        }
+      } catch (err) {
+        console.error('Failed to initialize translator:', err);
+        setError('Failed to initialize translation widget');
+      }
+    };
 
-    setDomTranslator(translator);
+    initTranslator();
   }, [apiUrl, apiKey, defaultLang, targetElementId]);
 
   const handleLanguageChange = async (langCode: string) => {
-    if (!domTranslator || isTranslating) return;
+    if (!domTranslator || isTranslating || !isInitialized) return;
 
     setError(null);
     setIsTranslating(true);
@@ -65,16 +77,25 @@ export function TranslationWidget({
 
     try {
       await domTranslator.translateTo(langCode, (prog) => {
-        setProgress(prog);
+        setProgress(Math.min(prog, 100));
       });
       setCurrentLang(langCode);
       setIsOpen(false);
     } catch (err) {
-      setError('Translation failed. Please try again.');
+      const errorMessage = err instanceof Error ? err.message : 'Translation failed';
+
+      if (errorMessage.includes('CORS') || errorMessage.includes('network')) {
+        setError('Connection error. Try self-hosting LibreTranslate or check your network.');
+      } else if (errorMessage.includes('rate limit')) {
+        setError('Rate limit reached. Please wait and try again.');
+      } else {
+        setError(`Translation failed: ${errorMessage}`);
+      }
+
       console.error('Translation error:', err);
     } finally {
       setIsTranslating(false);
-      setProgress(0);
+      setTimeout(() => setProgress(0), 500);
     }
   };
 
@@ -93,8 +114,9 @@ export function TranslationWidget({
         {/* Widget Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          disabled={isTranslating}
+          disabled={isTranslating || !isInitialized}
           className="flex items-center gap-2 bg-white hover:bg-gray-50 text-gray-900 px-4 py-2.5 rounded-lg shadow-lg border border-gray-200 transition-all hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+          title={isInitialized ? 'Select language' : 'Initializing...'}
         >
           {isTranslating ? (
             <Loader2 className="w-4 h-4 animate-spin" />
@@ -154,10 +176,18 @@ export function TranslationWidget({
 
         {/* Error Message */}
         {error && (
-          <div className="absolute top-full mt-2 w-56 bg-red-50 border border-red-200 rounded-lg shadow-lg p-3">
+          <div className="absolute top-full mt-2 w-64 bg-red-50 border border-red-200 rounded-lg shadow-lg p-3">
             <div className="flex items-start gap-2">
               <AlertCircle className="w-4 h-4 text-red-600 flex-shrink-0 mt-0.5" />
-              <p className="text-xs text-red-800">{error}</p>
+              <div className="flex-1">
+                <p className="text-xs text-red-800">{error}</p>
+                <button
+                  onClick={() => setError(null)}
+                  className="text-xs text-red-600 hover:text-red-800 font-medium mt-1"
+                >
+                  Dismiss
+                </button>
+              </div>
             </div>
           </div>
         )}
