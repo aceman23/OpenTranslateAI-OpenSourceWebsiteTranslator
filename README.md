@@ -7,10 +7,27 @@ A beautiful, production-ready translation widget powered by LibreTranslate - a f
 - **Fully Open Source**: Built on LibreTranslate, completely transparent and auditable
 - **Smart DOM Translation**: Preserves HTML structure, styles, and interactive elements
 - **Multi-Language Support**: Chinese, English, Spanish, French, German, Japanese, Korean, Arabic, Hindi, Portuguese
-- **Caching System**: Efficient translation caching to avoid redundant API calls
+- **Smart Caching System**: Instant language switching with zero latency once cached
 - **Batch Processing**: Translates content in optimized batches with progress tracking
+- **Beautiful Demo Page**: Production-ready landing page with bilingual content (English/Chinese)
+- **GitHub Integration**: Built-in CTA buttons linking to LibreTranslate repository
 - **Beautiful UI**: Modern, accessible design with smooth animations
 - **Easy Integration**: Simple React component that works out of the box
+
+## Demo Content
+
+The project includes a fully-featured demo landing page showcasing the translation widget:
+
+- **Bilingual Support**: Available in both English (`DemoContentEnglish.tsx`) and Chinese (`DemoContent.tsx`)
+- **Feature Showcase**: Four feature cards highlighting:
+  - Multi-Language Support
+  - Privacy Protection
+  - Real-time Translation
+  - Smart Caching
+- **GitHub CTA Section**: Prominent call-to-action with GitHub logo and buttons linking to the LibreTranslate repository
+- **Use Cases Section**: Real-world application scenarios
+- **FAQ Section**: Common questions about open-source translation
+- **Responsive Design**: Mobile-friendly layout with professional styling
 
 ## Quick Start
 
@@ -95,14 +112,16 @@ services:
 
 1. **DOM Analysis**: TreeWalker API extracts all visible text nodes
 2. **Batch Translation**: Text sent to LibreTranslate API in optimized batches
-3. **Smart Caching**: Translations cached to avoid redundant requests
+3. **Smart Caching**: Translations cached for instant switching with zero latency
 4. **Precise Updates**: Direct text node updates preserve DOM structure
 
 ### Key Components
 
-- **TranslationService** (`src/services/translation.ts`): API communication and caching
+- **TranslationService** (`src/services/translation.ts`): API communication and smart caching
 - **DOMTranslator** (`src/services/domTranslator.ts`): DOM traversal and text replacement
-- **TranslationWidget** (`src/components/TranslationWidget.tsx`): UI component
+- **TranslationWidget** (`src/components/TranslationWidget.tsx`): UI widget component
+- **DemoContent** (`src/components/DemoContent.tsx`): Chinese demo landing page
+- **DemoContentEnglish** (`src/components/DemoContentEnglish.tsx`): English demo landing page
 
 ## Supported Languages
 
@@ -121,8 +140,9 @@ services:
 
 1. **Self-host LibreTranslate** for better performance and no rate limits
 2. **Use specific target elements** instead of translating the entire page
-3. **Translation cache** automatically reduces API calls for repeated content
-4. **Batch processing** optimizes API usage
+3. **Smart caching** enables instant language switching after initial translation
+4. **Translation cache** automatically reduces API calls for repeated content
+5. **Batch processing** optimizes API usage and reduces network overhead
 
 ## Browser Support
 
