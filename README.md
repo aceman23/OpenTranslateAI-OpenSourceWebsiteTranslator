@@ -1,4 +1,4 @@
-# Website Translation Widget
+# Website Translation Plugin Widget
 
 A beautiful, production-ready translation widget for React applications. Translate your website content into multiple languages with a simple, easy-to-use component.
 
