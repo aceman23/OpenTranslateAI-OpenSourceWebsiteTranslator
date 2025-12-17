@@ -1,4 +1,4 @@
-import { Globe, Languages, Lock, Zap, Code, Eye, Users, FileText, ArrowRight, RotateCcw } from 'lucide-react';
+import { Globe, Languages, Lock, Zap, Code, Eye, Users, FileText, ArrowRight, RotateCcw, Github, Star } from 'lucide-react';
 
 export function DemoContentEnglish() {
   return (
@@ -67,17 +67,40 @@ export function DemoContentEnglish() {
         {/* About Section */}
         <section className="mb-20">
           <div className="bg-[#FFE6D5] rounded-3xl p-12">
-            <div className="max-w-2xl">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Privacy-First Translation</h2>
-              <p className="text-gray-700 text-lg leading-relaxed mb-4">
-                A fully open-source machine translation solution based on LibreTranslate, supporting real-time translation across multiple languages.
-              </p>
-              <p className="text-gray-700 text-lg leading-relaxed mb-8">
-                No need for Google Translate API, protecting your privacy and data security. You control your data, you control your infrastructure.
-              </p>
-              <button className="border-2 border-gray-900 text-gray-900 px-8 py-3 rounded-xl font-medium hover:bg-gray-900 hover:text-white transition-colors">
-                Explore More
-              </button>
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">Privacy-First Translation</h2>
+                <p className="text-gray-700 text-lg leading-relaxed mb-4">
+                  A fully open-source machine translation solution based on LibreTranslate, supporting real-time translation across multiple languages.
+                </p>
+                <p className="text-gray-700 text-lg leading-relaxed mb-8">
+                  No need for Google Translate API, protecting your privacy and data security. You control your data, you control your infrastructure.
+                </p>
+                <button className="border-2 border-gray-900 text-gray-900 px-8 py-3 rounded-xl font-medium hover:bg-gray-900 hover:text-white transition-colors">
+                  Explore More
+                </button>
+              </div>
+              <div className="flex flex-col items-center justify-center gap-6">
+                <div className="bg-white rounded-3xl p-8 shadow-lg">
+                  <Github className="w-32 h-32 text-gray-900" />
+                </div>
+                <div className="flex flex-col gap-3 w-full max-w-sm">
+                  <a
+                    href="https://github.com/LibreTranslate/LibreTranslate"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-gray-900 text-white px-6 py-3 rounded-xl font-medium hover:bg-gray-800 transition-colors flex items-center justify-center gap-2 group"
+                  >
+                    <Github className="w-5 h-5" />
+                    View on GitHub
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                  <button className="border-2 border-gray-900 text-gray-900 px-6 py-3 rounded-xl font-medium hover:bg-gray-900 hover:text-white transition-colors flex items-center justify-center gap-2">
+                    <Star className="w-5 h-5" />
+                    Star this repo if you like it!
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </section>
