@@ -28,12 +28,27 @@ export function DemoContentEnglish() {
                   <div className="w-3 h-3 rounded-full bg-green-400"></div>
                 </div>
                 <div className="space-y-4">
-                  <div className="bg-[#FFE6D5] rounded-lg p-4 flex items-center gap-3">
-                    <Globe className="w-6 h-6 text-[#FF9A6C]" />
-                    <span className="text-gray-700 font-medium">Real-time Translation</span>
+                  <div className="bg-[#FFE6D5] rounded-lg p-4 flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <Globe className="w-6 h-6 text-[#FF9A6C]" />
+                      <span className="text-gray-700 font-medium">Hello World</span>
+                    </div>
+                    <span className="text-xs text-gray-500">EN</span>
                   </div>
-                  <div className="bg-gray-100 rounded-lg p-4 h-12"></div>
-                  <div className="bg-gray-100 rounded-lg p-4 h-12"></div>
+                  <div className="bg-[#E5E7FF] rounded-lg p-4 flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <Languages className="w-6 h-6 text-[#8B8FFF]" />
+                      <span className="text-gray-700 font-medium">你好世界</span>
+                    </div>
+                    <span className="text-xs text-gray-500">中文</span>
+                  </div>
+                  <div className="bg-[#FFE6D5] rounded-lg p-4 flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <Globe className="w-6 h-6 text-[#FF9A6C]" />
+                      <span className="text-gray-700 font-medium">Hola Mundo</span>
+                    </div>
+                    <span className="text-xs text-gray-500">ES</span>
+                  </div>
                 </div>
               </div>
               <div className="absolute -top-6 -right-6 w-20 h-20 bg-[#FFE6D5] rounded-2xl flex items-center justify-center shadow-lg rotate-12">
