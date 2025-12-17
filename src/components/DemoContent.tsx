@@ -248,7 +248,33 @@ export function DemoContent() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center text-sm text-gray-300">
             <p className="mb-2">
-              基于 LibreTranslate 构建 | 完全开源 | MIT 协议
+              基于{' '}
+              <a
+                href="https://github.com/LibreTranslate/LibreTranslate"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#FF9A6C] hover:text-[#FFB088] transition-colors"
+              >
+                LibreTranslate
+              </a>
+              {' '}构建 |{' '}
+              <a
+                href="https://github.com/aceman23/open-website-translator-widget"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#FF9A6C] hover:text-[#FFB088] transition-colors"
+              >
+                完全开源
+              </a>
+              {' '}|{' '}
+              <a
+                href="https://opensource.org/licenses/MIT"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#FF9A6C] hover:text-[#FFB088] transition-colors"
+              >
+                MIT 协议
+              </a>
             </p>
             <p className="mb-4">
               支持自托管或使用公共实例 | 保护您的数据隐私
