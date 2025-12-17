@@ -86,7 +86,7 @@ export function DemoContentEnglish() {
                 </div>
                 <div className="flex flex-col gap-3 w-full max-w-sm">
                   <a
-                    href="https://github.com/LibreTranslate/LibreTranslate"
+                    href="https://github.com/aceman23/open-website-translator-widget"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-gray-900 text-white px-6 py-3 rounded-xl font-medium hover:bg-gray-800 transition-colors flex items-center justify-center gap-2 group"
@@ -248,10 +248,47 @@ export function DemoContentEnglish() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center text-sm text-gray-300">
             <p className="mb-2">
-              Built with LibreTranslate | Fully Open Source | MIT License
+              Built with{' '}
+              <a
+                href="https://github.com/LibreTranslate/LibreTranslate"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#FF9A6C] hover:text-[#FFB088] transition-colors"
+              >
+                LibreTranslate
+              </a>
+              {' '}|{' '}
+              <a
+                href="https://github.com/aceman23/open-website-translator-widget"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#FF9A6C] hover:text-[#FFB088] transition-colors"
+              >
+                Fully Open Source
+              </a>
+              {' '}|{' '}
+              <a
+                href="https://opensource.org/licenses/MIT"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#FF9A6C] hover:text-[#FFB088] transition-colors"
+              >
+                MIT License
+              </a>
             </p>
-            <p>
+            <p className="mb-4">
               Supports self-hosting or public instances | Protects your data privacy
+            </p>
+            <p className="text-gray-400 pt-4 border-t border-gray-700">
+              Created and Developed by{' '}
+              <a
+                href="https://hybridads.ai/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#FF9A6C] hover:text-[#FFB088] transition-colors font-medium"
+              >
+                Hybrid Ads.ai
+              </a>
             </p>
           </div>
         </div>

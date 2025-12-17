@@ -1,10 +1,12 @@
 # Open-Source Website Translation Widget
 
-A beautiful, production-ready translation widget powered by LibreTranslate - a fully open-source machine translation API. No Google Translate API needed, keeping your data private and secure.
+A beautiful, production-ready translation widget powered by [LibreTranslate](https://github.com/LibreTranslate/LibreTranslate) - a fully open-source machine translation API. No Google Translate API needed, keeping your data private and secure.
+
+> **Built on LibreTranslate**: This project leverages the power of [LibreTranslate](https://github.com/LibreTranslate/LibreTranslate), a free and open-source machine translation API that respects your privacy. Star the [LibreTranslate repository](https://github.com/LibreTranslate/LibreTranslate) to support the project!
 
 ## Features
 
-- **Fully Open Source**: Built on LibreTranslate, completely transparent and auditable
+- **Fully Open Source**: Built on [LibreTranslate](https://github.com/LibreTranslate/LibreTranslate), completely transparent and auditable
 - **Smart DOM Translation**: Preserves HTML structure, styles, and interactive elements
 - **Multi-Language Support**: Chinese, English, Spanish, French, German, Japanese, Korean, Arabic, Hindi, Portuguese
 - **Smart Caching System**: Instant language switching with zero latency once cached
@@ -24,7 +26,7 @@ The project includes a fully-featured demo landing page showcasing the translati
   - Privacy Protection
   - Real-time Translation
   - Smart Caching
-- **GitHub CTA Section**: Prominent call-to-action with GitHub logo and buttons linking to the LibreTranslate repository
+- **GitHub CTA Section**: Prominent call-to-action with GitHub logo and buttons linking to the [LibreTranslate repository](https://github.com/LibreTranslate/LibreTranslate)
 - **Use Cases Section**: Real-world application scenarios
 - **FAQ Section**: Common questions about open-source translation
 - **Responsive Design**: Mobile-friendly layout with professional styling
@@ -75,7 +77,14 @@ Add `data-no-translate` attribute to elements that should not be translated:
 
 ## Self-Hosting LibreTranslate
 
-For production use, we recommend self-hosting LibreTranslate:
+For production use, we recommend self-hosting [LibreTranslate](https://github.com/LibreTranslate/LibreTranslate). This gives you:
+
+- **Full Control**: No rate limits or restrictions
+- **Better Performance**: Deploy closer to your users
+- **Enhanced Privacy**: Your data never leaves your infrastructure
+- **Cost Effective**: Free to run on your own servers
+
+Learn more in the [official LibreTranslate documentation](https://github.com/LibreTranslate/LibreTranslate#readme).
 
 ### Using Docker
 
@@ -125,6 +134,8 @@ services:
 
 ## Supported Languages
 
+The widget supports all languages available in [LibreTranslate](https://github.com/LibreTranslate/LibreTranslate). Currently configured languages include:
+
 - Chinese (中文) - `zh`
 - English - `en`
 - Spanish (Español) - `es`
@@ -136,13 +147,27 @@ services:
 - Hindi (हिन्दी) - `hi`
 - Portuguese (Português) - `pt`
 
+For a complete list of supported languages, visit the [LibreTranslate repository](https://github.com/LibreTranslate/LibreTranslate#supported-languages).
+
 ## Performance Tips
 
-1. **Self-host LibreTranslate** for better performance and no rate limits
+1. **Self-host [LibreTranslate](https://github.com/LibreTranslate/LibreTranslate)** for better performance and no rate limits
 2. **Use specific target elements** instead of translating the entire page
 3. **Smart caching** enables instant language switching after initial translation
 4. **Translation cache** automatically reduces API calls for repeated content
 5. **Batch processing** optimizes API usage and reduces network overhead
+
+## Why LibreTranslate?
+
+[LibreTranslate](https://github.com/LibreTranslate/LibreTranslate) is the foundation of this widget because it:
+
+- **Respects Privacy**: No tracking, no data collection, completely open-source
+- **Self-Hostable**: Deploy on your infrastructure for full control
+- **Free & Open**: MIT licensed with an active community
+- **Production Ready**: Used by thousands of websites worldwide
+- **API Compatible**: Drop-in replacement for proprietary translation services
+
+Learn more and contribute at [github.com/LibreTranslate/LibreTranslate](https://github.com/LibreTranslate/LibreTranslate)
 
 ## Browser Support
 
