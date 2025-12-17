@@ -48,6 +48,7 @@ export function TranslationWidget({
   const [error, setError] = useState<string | null>(null);
   const [domTranslator, setDomTranslator] = useState<DOMTranslator | null>(null);
   const [isInitialized, setIsInitialized] = useState(false);
+  const [cachedLanguages, setCachedLanguages] = useState<string[]>([]);
 
   useEffect(() => {
     const initTranslator = async () => {
@@ -60,6 +61,9 @@ export function TranslationWidget({
           await translator.initialize(targetElement);
           setDomTranslator(translator);
           setIsInitialized(true);
+
+          // Initialize cached languages with the original language
+          setCachedLanguages([defaultLang]);
         } else {
           setError(`Target element #${targetElementId} not found`);
         }
@@ -86,6 +90,27 @@ export function TranslationWidget({
       return;
     }
 
+    const isCached = cachedLanguages.includes(langCode);
+
+    if (isCached) {
+      setIsTranslating(true);
+      setProgress(0);
+
+      try {
+        await domTranslator.translateTo(langCode, (prog) => {
+          setProgress(Math.min(prog, 100));
+        });
+        setCurrentLang(langCode);
+        onLanguageChange?.(langCode);
+      } catch (err) {
+        console.error('Error switching to cached language:', err);
+      } finally {
+        setIsTranslating(false);
+        setTimeout(() => setProgress(0), 300);
+      }
+      return;
+    }
+
     setIsTranslating(true);
     setProgress(0);
 
@@ -95,6 +120,10 @@ export function TranslationWidget({
       });
       setCurrentLang(langCode);
       onLanguageChange?.(langCode);
+
+      // Update cached languages after successful translation
+      const newCachedLanguages = domTranslator.getCachedLanguages();
+      setCachedLanguages(newCachedLanguages);
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Translation failed';
 
@@ -168,6 +197,8 @@ export function TranslationWidget({
             </div>
             {LANGUAGES.map((lang) => {
               const isLocal = localLanguages.includes(lang.code);
+              const isCached = cachedLanguages.includes(lang.code);
+              const showInstantBadge = isLocal || isCached;
               return (
                 <button
                   key={lang.code}
@@ -181,7 +212,7 @@ export function TranslationWidget({
                       <span className="text-sm font-medium text-gray-900">
                         {lang.nativeName}
                       </span>
-                      {isLocal && (
+                      {showInstantBadge && (
                         <span className="text-xs bg-green-100 text-green-700 px-1.5 py-0.5 rounded font-medium">
                           Instant
                         </span>

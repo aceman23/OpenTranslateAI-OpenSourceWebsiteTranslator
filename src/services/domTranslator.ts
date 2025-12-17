@@ -3,7 +3,10 @@ import { TranslationService } from './translation';
 interface TextNodeData {
   node: Text;
   originalText: string;
-  translatedText?: string;
+}
+
+interface TranslationCache {
+  [langCode: string]: string[];
 }
 
 export class DOMTranslator {
@@ -12,6 +15,7 @@ export class DOMTranslator {
   private originalLang: string;
   private currentLang: string;
   private isTranslating = false;
+  private translationCache: TranslationCache = {};
 
   constructor(translationService: TranslationService, originalLang: string) {
     this.translationService = translationService;
@@ -95,10 +99,19 @@ export class DOMTranslator {
           nodeData.node.textContent = nodeData.originalText;
         });
         this.currentLang = this.originalLang;
+        onProgress?.(100);
+      } else if (this.translationCache[targetLang]) {
+        // Use cached translation
+        this.textNodes.forEach((nodeData, index) => {
+          nodeData.node.textContent = this.translationCache[targetLang][index];
+        });
+        this.currentLang = targetLang;
+        onProgress?.(100);
       } else {
         // Translate text nodes in batches
         const batchSize = 10;
         const totalBatches = Math.ceil(this.textNodes.length / batchSize);
+        const allTranslations: string[] = [];
 
         for (let i = 0; i < this.textNodes.length; i += batchSize) {
           const batch = this.textNodes.slice(i, i + batchSize);
@@ -112,7 +125,7 @@ export class DOMTranslator {
 
           batch.forEach((nodeData, index) => {
             nodeData.node.textContent = translated[index];
-            nodeData.translatedText = translated[index];
+            allTranslations.push(translated[index]);
           });
 
           const currentBatch = Math.floor(i / batchSize) + 1;
@@ -120,6 +133,8 @@ export class DOMTranslator {
           onProgress?.(progress);
         }
 
+        // Cache the translations
+        this.translationCache[targetLang] = allTranslations;
         this.currentLang = targetLang;
       }
     } finally {
@@ -133,5 +148,9 @@ export class DOMTranslator {
 
   getOriginalLang(): string {
     return this.originalLang;
+  }
+
+  getCachedLanguages(): string[] {
+    return [this.originalLang, ...Object.keys(this.translationCache)];
   }
 }
