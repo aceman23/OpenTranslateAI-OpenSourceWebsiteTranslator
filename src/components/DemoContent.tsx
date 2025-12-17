@@ -4,22 +4,48 @@ export function DemoContent() {
   return (
     <div id="translatable-content" className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       {/* Hero Section */}
-      <header className="bg-white shadow-sm">
-        <div className="max-w-6xl mx-auto px-6 py-8">
-          <div className="flex items-center gap-3 mb-4">
-            <Globe className="w-8 h-8 text-blue-600" />
-            <h1 className="text-3xl font-bold text-gray-900">
-              开源网站翻译工具
-            </h1>
+      <header className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white">
+        <div className="max-w-6xl mx-auto px-6 py-20">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center">
+              <Globe className="w-10 h-10 text-white" />
+            </div>
+            <div>
+              <h1 className="text-5xl font-bold leading-tight">
+                打破语言障碍
+              </h1>
+              <p className="text-xl text-blue-100 mt-2">
+                零摩擦触达全球用户
+              </p>
+            </div>
           </div>
-          <p className="text-lg text-gray-600 max-w-3xl">
-            基于 LibreTranslate 的完全开源机器翻译解决方案，支持多种语言实时翻译。无需 Google Translate API，保护您的隐私和数据安全。
+          <p className="text-lg text-blue-100 max-w-3xl leading-relaxed">
+            将任何网站瞬间转变为多语言体验。无需复杂设置，无供应商锁定，只有纯粹的开源力量。
           </p>
         </div>
       </header>
 
       {/* Main Content */}
       <main className="max-w-6xl mx-auto px-6 py-12">
+        {/* About Section */}
+        <section className="mb-16">
+          <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-200">
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mt-1">
+                <Globe className="w-6 h-6 text-blue-600" />
+              </div>
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">隐私优先的翻译技术</h2>
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  基于 LibreTranslate 的完全开源机器翻译解决方案，支持多种语言实时翻译。
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  无需 Google Translate API，保护您的隐私和数据安全。您掌控数据，您掌控基础设施。
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
         {/* Features Grid */}
         <section className="mb-16">
           <h2 className="text-2xl font-bold text-gray-900 mb-8">核心特性</h2>
