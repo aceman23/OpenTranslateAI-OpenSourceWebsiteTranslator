@@ -173,9 +173,7 @@ export function TranslationWidget({
 
         {/* Progress Bar */}
         {isTranslating && (
-          <div className={`absolute top-full mt-2 w-full min-w-[200px] bg-white rounded-lg shadow-lg border border-gray-200 p-3 ${
-            position.includes('right') ? 'right-0' : 'left-0'
-          }`}>
+          <div className="absolute top-full mt-2 w-full bg-white rounded-lg shadow-lg border border-gray-200 p-3">
             <div className="flex items-center gap-2 mb-2">
               <Loader2 className="w-3 h-3 animate-spin text-blue-600" />
               <span className="text-xs text-gray-600">Translating...</span>
@@ -191,66 +189,49 @@ export function TranslationWidget({
 
         {/* Language Dropdown */}
         {isOpen && !isTranslating && (
-          <div className={`absolute top-full mt-2 bg-white rounded-xl shadow-2xl border border-gray-100 p-4 z-[100] ${
-            position.includes('right') ? 'right-0' : 'left-0'
-          }`}>
-            <div className="mb-3">
+          <div className="absolute top-full mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-200 py-2 max-h-96 overflow-y-auto z-[100]">
+            <div className="px-3 py-2 border-b border-gray-100">
               <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider">
                 Select Language
               </p>
             </div>
-            <div className="grid grid-cols-2 gap-2 w-[320px] max-w-[calc(100vw-2rem)]">
-              {LANGUAGES.map((lang) => {
-                const isLocal = localLanguages.includes(lang.code);
-                const isCached = cachedLanguages.includes(lang.code);
-                const showInstantBadge = isLocal || isCached;
-                const isSelected = currentLang === lang.code;
-                return (
-                  <button
-                    key={lang.code}
-                    onClick={() => handleLanguageChange(lang.code)}
-                    className={`relative px-3 py-3 rounded-lg transition-all duration-200 text-left group ${
-                      isSelected
-                        ? 'bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-md scale-[1.02]'
-                        : 'bg-gray-50 hover:bg-gray-100 hover:shadow-sm'
-                    }`}
-                  >
-                    <div className="flex flex-col gap-1">
-                      <div className="flex items-center gap-1.5">
-                        <span className={`text-sm font-semibold ${
-                          isSelected ? 'text-white' : 'text-gray-900'
-                        }`}>
-                          {lang.nativeName}
-                        </span>
-                        {showInstantBadge && !isSelected && (
-                          <span className="text-[10px] bg-green-100 text-green-700 px-1 py-0.5 rounded font-semibold">
-                            ⚡
-                          </span>
-                        )}
-                      </div>
-                      <span className={`text-xs ${
-                        isSelected ? 'text-blue-100' : 'text-gray-500'
-                      }`}>
-                        {lang.name}
+            {LANGUAGES.map((lang) => {
+              const isLocal = localLanguages.includes(lang.code);
+              const isCached = cachedLanguages.includes(lang.code);
+              const showInstantBadge = isLocal || isCached;
+              return (
+                <button
+                  key={lang.code}
+                  onClick={() => handleLanguageChange(lang.code)}
+                  className={`w-full text-left px-4 py-2.5 hover:bg-gray-50 transition-colors flex items-center justify-between group ${
+                    currentLang === lang.code ? 'bg-blue-50' : ''
+                  }`}
+                >
+                  <div className="flex flex-col">
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm font-medium text-gray-900">
+                        {lang.nativeName}
                       </span>
+                      {showInstantBadge && (
+                        <span className="text-xs bg-green-100 text-green-700 px-1.5 py-0.5 rounded font-medium">
+                          Instant
+                        </span>
+                      )}
                     </div>
-                    {isSelected && (
-                      <div className="absolute top-2 right-2">
-                        <Check className="w-3.5 h-3.5 text-white" />
-                      </div>
-                    )}
-                  </button>
-                );
-              })}
-            </div>
+                    <span className="text-xs text-gray-500">{lang.name}</span>
+                  </div>
+                  {currentLang === lang.code && (
+                    <Check className="w-4 h-4 text-blue-600" />
+                  )}
+                </button>
+              );
+            })}
           </div>
         )}
 
         {/* Error Message */}
         {error && (
-          <div className={`absolute top-full mt-2 w-64 max-w-[calc(100vw-2rem)] bg-red-50 border border-red-200 rounded-lg shadow-lg p-3 ${
-            position.includes('right') ? 'right-0' : 'left-0'
-          }`}>
+          <div className="absolute top-full mt-2 w-64 bg-red-50 border border-red-200 rounded-lg shadow-lg p-3">
             <div className="flex items-start gap-2">
               <AlertCircle className="w-4 h-4 text-red-600 flex-shrink-0 mt-0.5" />
               <div className="flex-1">

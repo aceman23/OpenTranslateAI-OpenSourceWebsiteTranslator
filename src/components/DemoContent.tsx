@@ -86,7 +86,7 @@ export function DemoContent() {
                 </div>
                 <div className="flex flex-col gap-3 w-full max-w-sm">
                   <a
-                    href="https://github.com/aceman23/open-website-translator-widget"
+                    href="https://github.com/LibreTranslate/LibreTranslate"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-gray-900 text-white px-6 py-3 rounded-xl font-medium hover:bg-gray-800 transition-colors flex items-center justify-center gap-2 group"
@@ -248,47 +248,10 @@ export function DemoContent() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center text-sm text-gray-300">
             <p className="mb-2">
-              基于{' '}
-              <a
-                href="https://github.com/LibreTranslate/LibreTranslate"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#FF9A6C] hover:text-[#FFB088] transition-colors"
-              >
-                LibreTranslate
-              </a>
-              {' '}构建 |{' '}
-              <a
-                href="https://github.com/aceman23/open-website-translator-widget"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#FF9A6C] hover:text-[#FFB088] transition-colors"
-              >
-                完全开源
-              </a>
-              {' '}|{' '}
-              <a
-                href="https://opensource.org/licenses/MIT"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#FF9A6C] hover:text-[#FFB088] transition-colors"
-              >
-                MIT 协议
-              </a>
+              基于 LibreTranslate 构建 | 完全开源 | MIT 协议
             </p>
-            <p className="mb-4">
+            <p>
               支持自托管或使用公共实例 | 保护您的数据隐私
-            </p>
-            <p className="text-gray-400 pt-4 border-t border-gray-700">
-              创建和开发由{' '}
-              <a
-                href="https://hybridads.ai/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#FF9A6C] hover:text-[#FFB088] transition-colors font-medium"
-              >
-                Hybrid Ads.ai
-              </a>
             </p>
           </div>
         </div>
