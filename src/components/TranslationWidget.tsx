@@ -173,7 +173,9 @@ export function TranslationWidget({
 
         {/* Progress Bar */}
         {isTranslating && (
-          <div className="absolute top-full mt-2 w-full bg-white rounded-lg shadow-lg border border-gray-200 p-3">
+          <div className={`absolute top-full mt-2 w-full min-w-[200px] bg-white rounded-lg shadow-lg border border-gray-200 p-3 ${
+            position.includes('right') ? 'right-0' : 'left-0'
+          }`}>
             <div className="flex items-center gap-2 mb-2">
               <Loader2 className="w-3 h-3 animate-spin text-blue-600" />
               <span className="text-xs text-gray-600">Translating...</span>
@@ -189,7 +191,9 @@ export function TranslationWidget({
 
         {/* Language Dropdown */}
         {isOpen && !isTranslating && (
-          <div className="absolute top-full mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-200 py-2 max-h-96 overflow-y-auto z-[100]">
+          <div className={`absolute top-full mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-200 py-2 max-h-96 overflow-y-auto z-[100] ${
+            position.includes('right') ? 'right-0' : 'left-0'
+          }`}>
             <div className="px-3 py-2 border-b border-gray-100">
               <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider">
                 Select Language
@@ -231,7 +235,9 @@ export function TranslationWidget({
 
         {/* Error Message */}
         {error && (
-          <div className="absolute top-full mt-2 w-64 bg-red-50 border border-red-200 rounded-lg shadow-lg p-3">
+          <div className={`absolute top-full mt-2 w-64 max-w-[calc(100vw-2rem)] bg-red-50 border border-red-200 rounded-lg shadow-lg p-3 ${
+            position.includes('right') ? 'right-0' : 'left-0'
+          }`}>
             <div className="flex items-start gap-2">
               <AlertCircle className="w-4 h-4 text-red-600 flex-shrink-0 mt-0.5" />
               <div className="flex-1">
