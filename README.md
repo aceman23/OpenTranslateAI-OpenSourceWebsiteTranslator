@@ -133,6 +133,7 @@ MIT License - feel free to use in personal and commercial projects
 ## Credits
 
 Built with:
+- [LibreTranslate](https://github.com/LibreTranslate/LibreTranslate) - Translation API
 - [React](https://react.dev/) - UI framework
 - [Tailwind CSS](https://tailwindcss.com/) - Styling
 - [Lucide React](https://lucide.dev/) - Icons
