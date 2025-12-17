@@ -1,4 +1,4 @@
-import { CheckCircle, Zap, Shield, Globe, Sparkles, ArrowRight, Crown, GraduationCap, ShoppingCart, Layers, Bot } from 'lucide-react';
+import { CheckCircle, Zap, Shield, Globe, Sparkles, ArrowRight, Crown, GraduationCap, ShoppingCart, Layers, Bot, Languages, Code, Server, List } from 'lucide-react';
 
 export function FeaturesPage() {
   return (
@@ -144,6 +144,81 @@ export function FeaturesPage() {
             <p className="text-gray-700 text-lg max-w-2xl mx-auto">
               Pro version uses OpenRouter's unified API for seamless access to 100+ AI models, giving you the flexibility to choose the best translation engine for your needs.
             </p>
+          </div>
+
+          <div className="mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
+              Core Features (Open Source Free)
+            </h2>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all">
+                <div className="w-20 h-20 bg-gradient-to-br from-[#FFE6D5] to-[#FFD4BA] rounded-3xl flex items-center justify-center mb-6">
+                  <Languages className="w-10 h-10 text-[#FF9A6C]" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Client-side Translation</h3>
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  Privacy-focused, no data sent to servers
+                </p>
+                <div className="flex gap-2 mb-6 text-xs">
+                  <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full">Enterprise Grade</span>
+                  <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full">Secure</span>
+                </div>
+                <button className="w-full bg-[#1A2E2C] text-white px-6 py-3 rounded-xl font-medium hover:bg-[#152521] transition-colors">
+                  Learn More
+                </button>
+              </div>
+
+              <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all">
+                <div className="w-20 h-20 bg-gradient-to-br from-[#E5E7FF] to-[#D0D4FF] rounded-3xl flex items-center justify-center mb-6">
+                  <Code className="w-10 h-10 text-[#6B7BFF]" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Lightweight JavaScript</h3>
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  No dependencies required
+                </p>
+                <div className="flex gap-2 mb-6 text-xs">
+                  <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full">Cached</span>
+                  <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full">Zero Latency</span>
+                </div>
+                <button className="w-full bg-[#1A2E2C] text-white px-6 py-3 rounded-xl font-medium hover:bg-[#152521] transition-colors">
+                  Learn More
+                </button>
+              </div>
+
+              <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all">
+                <div className="w-20 h-20 bg-gradient-to-br from-[#E5E7FF] to-[#D0D4FF] rounded-3xl flex items-center justify-center mb-6">
+                  <Server className="w-10 h-10 text-[#6B7BFF]" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">LibreTranslate API</h3>
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  Self-hosted or public instances
+                </p>
+                <div className="flex gap-2 mb-6 text-xs">
+                  <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full">Lightning Fast</span>
+                  <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full">Optimized</span>
+                </div>
+                <button className="w-full bg-[#1A2E2C] text-white px-6 py-3 rounded-xl font-medium hover:bg-[#152521] transition-colors">
+                  Learn More
+                </button>
+              </div>
+
+              <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all">
+                <div className="w-20 h-20 bg-gradient-to-br from-[#FFE6D5] to-[#FFD4BA] rounded-3xl flex items-center justify-center mb-6">
+                  <List className="w-10 h-10 text-[#FF9A6C]" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Simple Language Switcher</h3>
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  Easy-to-use dropdown interface
+                </p>
+                <div className="flex gap-2 mb-6 text-xs">
+                  <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full">Beginner to Advanced</span>
+                </div>
+                <button className="w-full bg-[#1A2E2C] text-white px-6 py-3 rounded-xl font-medium hover:bg-[#152521] transition-colors">
+                  Learn More
+                </button>
+              </div>
+            </div>
           </div>
 
           <div className="text-center mb-12">
