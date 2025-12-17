@@ -86,7 +86,7 @@ export function DemoContentEnglish() {
                 </div>
                 <div className="flex flex-col gap-3 w-full max-w-sm">
                   <a
-                    href="https://github.com/LibreTranslate/LibreTranslate"
+                    href="https://github.com/aceman23/open-website-translator-widget"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-gray-900 text-white px-6 py-3 rounded-xl font-medium hover:bg-gray-800 transition-colors flex items-center justify-center gap-2 group"
