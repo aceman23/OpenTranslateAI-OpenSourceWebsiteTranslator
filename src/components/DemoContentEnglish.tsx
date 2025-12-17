@@ -1,4 +1,4 @@
-import { Globe, Languages, Lock, Zap, Code, Eye, Users, FileText, ArrowRight } from 'lucide-react';
+import { Globe, Languages, Lock, Zap, Code, Eye, Users, FileText, ArrowRight, RotateCcw } from 'lucide-react';
 
 export function DemoContentEnglish() {
   return (
@@ -128,6 +128,17 @@ export function DemoContentEnglish() {
               <h3 className="font-bold text-xl text-gray-900 mb-3">Real-time Translation</h3>
               <p className="text-gray-600 mb-4">Instant translation, seamless user experience</p>
               <p className="text-sm text-gray-500 mb-4">Lightning Fast • Optimized</p>
+              <button className="w-full bg-[#1A2E2C] text-white py-3 rounded-xl font-medium hover:bg-[#152521] transition-colors">
+                Learn More
+              </button>
+            </div>
+            <div className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all group">
+              <div className="w-full h-32 bg-[#E5E7FF] rounded-xl flex items-center justify-center mb-6">
+                <RotateCcw className="w-12 h-12 text-[#8B8FFF]" />
+              </div>
+              <h3 className="font-bold text-xl text-gray-900 mb-3">Smart Caching</h3>
+              <p className="text-gray-600 mb-4">Switch between languages instantly once cached</p>
+              <p className="text-sm text-gray-500 mb-4">Cached • Zero Latency</p>
               <button className="w-full bg-[#1A2E2C] text-white py-3 rounded-xl font-medium hover:bg-[#152521] transition-colors">
                 Learn More
               </button>
