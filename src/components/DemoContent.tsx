@@ -250,8 +250,19 @@ export function DemoContent() {
             <p className="mb-2">
               基于 LibreTranslate 构建 | 完全开源 | MIT 协议
             </p>
-            <p>
+            <p className="mb-4">
               支持自托管或使用公共实例 | 保护您的数据隐私
+            </p>
+            <p className="text-gray-400 pt-4 border-t border-gray-700">
+              创建和开发由{' '}
+              <a
+                href="https://hybridads.ai/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#FF9A6C] hover:text-[#FFB088] transition-colors font-medium"
+              >
+                Hybrid Ads.ai
+              </a>
             </p>
           </div>
         </div>

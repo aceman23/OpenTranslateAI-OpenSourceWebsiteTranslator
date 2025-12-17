@@ -250,8 +250,19 @@ export function DemoContentEnglish() {
             <p className="mb-2">
               Built with LibreTranslate | Fully Open Source | MIT License
             </p>
-            <p>
+            <p className="mb-4">
               Supports self-hosting or public instances | Protects your data privacy
+            </p>
+            <p className="text-gray-400 pt-4 border-t border-gray-700">
+              Created and Developed by{' '}
+              <a
+                href="https://hybridads.ai/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#FF9A6C] hover:text-[#FFB088] transition-colors font-medium"
+              >
+                Hybrid Ads.ai
+              </a>
             </p>
           </div>
         </div>
