@@ -1,4 +1,4 @@
-import { BookOpen, Code, Globe, Zap } from 'lucide-react';
+import { BookOpen, Code, Globe, Zap, TrendingUp, Users, Target } from 'lucide-react';
 
 export function DemoContent() {
   return (
@@ -69,6 +69,68 @@ export function DemoContent() {
               </h3>
               <p className="text-sm text-gray-600">
                 智能 DOM 遍历算法，翻译文本同时保留网页结构、样式和交互功能。
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Business Value Section */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-bold text-gray-900 mb-8">为什么网站所有者和企业喜欢这个方案</h2>
+          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-8 shadow-sm border border-blue-100">
+            <div className="grid md:grid-cols-3 gap-8 mb-8">
+              <div className="bg-white rounded-lg p-6 shadow-sm">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
+                    <Users className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-3xl font-bold text-blue-600 mb-1">76%</div>
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      的消费者更倾向于使用母语浏览产品
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-lg p-6 shadow-sm">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center">
+                    <TrendingUp className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-3xl font-bold text-green-600 mb-1">2.5倍</div>
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      本地化网站的转化率提升
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-lg p-6 shadow-sm">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center">
+                    <Target className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-3xl font-bold text-orange-600 mb-1">40%</div>
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      国际市场的用户流失率降低
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg p-6 border-l-4 border-blue-600">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                真实商业影响
+              </h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                对于面向国际受众的企业来说，语言可访问性直接影响收入和增长。一个专注于中文家庭的在线教育平台可以通过增加英语支持，立即扩展到美国和英国市场，潜在地在一夜之间将其可触达市场翻倍。
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                通过这个开源解决方案，您可以同时测试多个市场，无需昂贵的翻译服务或复杂的国际化框架。从小规模开始，验证需求，然后根据真实用户数据扩展您的本地化工作。
               </p>
             </div>
           </div>

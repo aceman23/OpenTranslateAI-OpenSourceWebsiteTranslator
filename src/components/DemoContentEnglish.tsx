@@ -1,4 +1,4 @@
-import { BookOpen, Code, Globe, Zap } from 'lucide-react';
+import { BookOpen, Code, Globe, Zap, TrendingUp, Users, Target } from 'lucide-react';
 
 export function DemoContentEnglish() {
   return (
@@ -69,6 +69,68 @@ export function DemoContentEnglish() {
               </h3>
               <p className="text-sm text-gray-600">
                 Smart DOM traversal algorithm that translates text while preserving webpage structure, styles, and interactive functionality.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Business Value Section */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-bold text-gray-900 mb-8">Why Website Owners Love This Solution</h2>
+          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-8 shadow-sm border border-blue-100">
+            <div className="grid md:grid-cols-3 gap-8 mb-8">
+              <div className="bg-white rounded-lg p-6 shadow-sm">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
+                    <Users className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-3xl font-bold text-blue-600 mb-1">76%</div>
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      of consumers prefer products in their native language
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-lg p-6 shadow-sm">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center">
+                    <TrendingUp className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-3xl font-bold text-green-600 mb-1">2.5x</div>
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      higher conversion rates for localized websites
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-lg p-6 shadow-sm">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center">
+                    <Target className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-3xl font-bold text-orange-600 mb-1">40%</div>
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      lower customer churn in international markets
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg p-6 border-l-4 border-blue-600">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                Real-World Impact
+              </h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                For businesses targeting international audiences, language accessibility directly impacts revenue and growth. An edtech platform focused on Chinese-speaking families could instantly expand into US and UK markets by adding English support, potentially doubling their addressable market overnight.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                With this open-source solution, you can test multiple markets simultaneously without expensive translation services or complex internationalization frameworks. Start small, validate demand, then scale your localization efforts based on real user data.
               </p>
             </div>
           </div>
