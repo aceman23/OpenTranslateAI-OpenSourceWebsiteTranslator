@@ -1,4 +1,4 @@
-import { CheckCircle, Zap, Shield, Globe, Sparkles, ArrowRight, Crown, GraduationCap, ShoppingCart, Layers, Bot, Languages, Code, Server, List, Target, TrendingUp, Infinity, Gift } from 'lucide-react';
+import { CheckCircle, Zap, Shield, Globe, Sparkles, ArrowRight, Crown, GraduationCap, ShoppingCart, Layers, Bot, Languages, Code, Server, List, Target, TrendingUp, Infinity, Gift, Github } from 'lucide-react';
 
 export function FeaturesPage() {
   return (
@@ -147,77 +147,140 @@ export function FeaturesPage() {
           </div>
 
           <div className="mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
-              Core Features (Open Source Free)
-            </h2>
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#1A2E2C] to-[#0F1918] text-white px-6 py-2 rounded-full mb-4">
+                <Github className="w-5 h-5" />
+                <span className="font-bold">OPEN SOURCE</span>
+              </div>
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                Core Features (Free Forever)
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Privacy-first translation powered by LibreTranslate with zero dependencies
+              </p>
+            </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all">
-                <div className="w-20 h-20 bg-gradient-to-br from-[#FFE6D5] to-[#FFD4BA] rounded-3xl flex items-center justify-center mb-6">
-                  <Languages className="w-10 h-10 text-[#FF9A6C]" />
+              <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all border border-gray-700">
+                <div className="w-20 h-20 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-3xl flex items-center justify-center mb-6">
+                  <Languages className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Client-side Translation</h3>
-                <p className="text-gray-600 leading-relaxed mb-6">
+                <h3 className="text-xl font-bold text-white mb-3">Client-side Translation</h3>
+                <p className="text-gray-300 leading-relaxed mb-6">
                   Privacy-focused, no data sent to servers
                 </p>
-                <div className="flex gap-2 mb-6 text-xs">
-                  <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full">Enterprise Grade</span>
-                  <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full">Secure</span>
+                <div className="space-y-2 mb-6">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                    <span className="text-sm text-gray-300">Complete privacy</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                    <span className="text-sm text-gray-300">No server requests</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                    <span className="text-sm text-gray-300">GDPR compliant</span>
+                  </div>
                 </div>
-                <button className="w-full bg-[#1A2E2C] text-white px-6 py-3 rounded-xl font-medium hover:bg-[#152521] transition-colors">
-                  Learn More
-                </button>
+                <div className="flex gap-2 text-xs">
+                  <span className="px-3 py-1 bg-emerald-400/20 text-emerald-400 rounded-full border border-emerald-400/30">Enterprise Grade</span>
+                </div>
               </div>
 
-              <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all">
-                <div className="w-20 h-20 bg-gradient-to-br from-[#E5E7FF] to-[#D0D4FF] rounded-3xl flex items-center justify-center mb-6">
-                  <Code className="w-10 h-10 text-[#6B7BFF]" />
+              <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all border border-gray-700">
+                <div className="w-20 h-20 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-3xl flex items-center justify-center mb-6">
+                  <Code className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Lightweight JavaScript</h3>
-                <p className="text-gray-600 leading-relaxed mb-6">
+                <h3 className="text-xl font-bold text-white mb-3">Lightweight JavaScript</h3>
+                <p className="text-gray-300 leading-relaxed mb-6">
                   No dependencies required
                 </p>
-                <div className="flex gap-2 mb-6 text-xs">
-                  <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full">Cached</span>
-                  <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full">Zero Latency</span>
+                <div className="space-y-2 mb-6">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-blue-400 flex-shrink-0" />
+                    <span className="text-sm text-gray-300">Zero dependencies</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-blue-400 flex-shrink-0" />
+                    <span className="text-sm text-gray-300">Tiny bundle size</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-blue-400 flex-shrink-0" />
+                    <span className="text-sm text-gray-300">Fast loading</span>
+                  </div>
                 </div>
-                <button className="w-full bg-[#1A2E2C] text-white px-6 py-3 rounded-xl font-medium hover:bg-[#152521] transition-colors">
-                  Learn More
-                </button>
+                <div className="flex gap-2 text-xs">
+                  <span className="px-3 py-1 bg-blue-400/20 text-blue-400 rounded-full border border-blue-400/30">Zero Latency</span>
+                </div>
               </div>
 
-              <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all">
-                <div className="w-20 h-20 bg-gradient-to-br from-[#E5E7FF] to-[#D0D4FF] rounded-3xl flex items-center justify-center mb-6">
-                  <Server className="w-10 h-10 text-[#6B7BFF]" />
+              <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all border border-gray-700">
+                <div className="w-20 h-20 bg-gradient-to-br from-purple-400 to-pink-500 rounded-3xl flex items-center justify-center mb-6">
+                  <Server className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">LibreTranslate API</h3>
-                <p className="text-gray-600 leading-relaxed mb-6">
+                <h3 className="text-xl font-bold text-white mb-3">LibreTranslate API</h3>
+                <p className="text-gray-300 leading-relaxed mb-6">
                   Self-hosted or public instances
                 </p>
-                <div className="flex gap-2 mb-6 text-xs">
-                  <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full">Lightning Fast</span>
-                  <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full">Optimized</span>
+                <div className="space-y-2 mb-6">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-purple-400 flex-shrink-0" />
+                    <span className="text-sm text-gray-300">Self-hosted option</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-purple-400 flex-shrink-0" />
+                    <span className="text-sm text-gray-300">Public instances</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-purple-400 flex-shrink-0" />
+                    <span className="text-sm text-gray-300">Full control</span>
+                  </div>
                 </div>
-                <button className="w-full bg-[#1A2E2C] text-white px-6 py-3 rounded-xl font-medium hover:bg-[#152521] transition-colors">
-                  Learn More
-                </button>
+                <div className="flex gap-2 text-xs">
+                  <span className="px-3 py-1 bg-purple-400/20 text-purple-400 rounded-full border border-purple-400/30">Flexible</span>
+                </div>
               </div>
 
-              <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all">
-                <div className="w-20 h-20 bg-gradient-to-br from-[#FFE6D5] to-[#FFD4BA] rounded-3xl flex items-center justify-center mb-6">
-                  <List className="w-10 h-10 text-[#FF9A6C]" />
+              <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all border border-gray-700">
+                <div className="w-20 h-20 bg-gradient-to-br from-orange-400 to-red-500 rounded-3xl flex items-center justify-center mb-6">
+                  <List className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Simple Language Switcher</h3>
-                <p className="text-gray-600 leading-relaxed mb-6">
+                <h3 className="text-xl font-bold text-white mb-3">Simple Language Switcher</h3>
+                <p className="text-gray-300 leading-relaxed mb-6">
                   Easy-to-use dropdown interface
                 </p>
-                <div className="flex gap-2 mb-6 text-xs">
-                  <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full">Beginner to Advanced</span>
+                <div className="space-y-2 mb-6">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-orange-400 flex-shrink-0" />
+                    <span className="text-sm text-gray-300">Dropdown UI</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-orange-400 flex-shrink-0" />
+                    <span className="text-sm text-gray-300">Easy integration</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-orange-400 flex-shrink-0" />
+                    <span className="text-sm text-gray-300">Customizable</span>
+                  </div>
                 </div>
-                <button className="w-full bg-[#1A2E2C] text-white px-6 py-3 rounded-xl font-medium hover:bg-[#152521] transition-colors">
-                  Learn More
-                </button>
+                <div className="flex gap-2 text-xs">
+                  <span className="px-3 py-1 bg-orange-400/20 text-orange-400 rounded-full border border-orange-400/30">User-Friendly</span>
+                </div>
               </div>
+            </div>
+
+            <div className="mt-8 text-center">
+              <a
+                href="https://github.com/yourusername/your-repo"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 bg-gradient-to-r from-[#1A2E2C] to-[#0F1918] text-white px-10 py-4 rounded-2xl font-bold text-lg hover:shadow-xl transition-all group"
+              >
+                <Github className="w-6 h-6" />
+                View on GitHub
+                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+              </a>
             </div>
           </div>
 
