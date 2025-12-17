@@ -1,4 +1,4 @@
-import { CheckCircle, Zap, Shield, Globe, Sparkles, ArrowRight, Crown, GraduationCap, ShoppingCart, Layers, Bot, Languages, Code, Server, List } from 'lucide-react';
+import { CheckCircle, Zap, Shield, Globe, Sparkles, ArrowRight, Crown, GraduationCap, ShoppingCart, Layers, Bot, Languages, Code, Server, List, Target, TrendingUp, Infinity, Gift } from 'lucide-react';
 
 export function FeaturesPage() {
   return (
@@ -218,6 +218,148 @@ export function FeaturesPage() {
                   Learn More
                 </button>
               </div>
+            </div>
+          </div>
+
+          <div className="mb-16">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#FF9A6C] to-[#FF7A4C] text-white px-6 py-2 rounded-full mb-4">
+                <Crown className="w-5 h-5" />
+                <span className="font-bold">PRO VERSION</span>
+              </div>
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                Multi-AI Model Powered Features
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Unlock professional-grade translation with access to 100+ AI models through OpenRouter
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all border border-[#FF9A6C]/30">
+                <div className="w-20 h-20 bg-gradient-to-br from-[#FF9A6C] to-[#FF7A4C] rounded-3xl flex items-center justify-center mb-6">
+                  <Sparkles className="w-10 h-10 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">Model Switching</h3>
+                <p className="text-gray-300 leading-relaxed mb-4">
+                  Choose from top AI engines on-the-fly
+                </p>
+                <div className="space-y-3 mb-6">
+                  <div>
+                    <p className="text-xs text-gray-400 mb-2">CLOUD MODELS</p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-3 py-1.5 bg-white/10 text-white text-xs rounded-lg border border-white/20">Grok</span>
+                      <span className="px-3 py-1.5 bg-white/10 text-white text-xs rounded-lg border border-white/20">Gemini</span>
+                      <span className="px-3 py-1.5 bg-white/10 text-white text-xs rounded-lg border border-white/20">GPT-4o</span>
+                      <span className="px-3 py-1.5 bg-white/10 text-white text-xs rounded-lg border border-white/20">Claude</span>
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-xs text-gray-400 mb-2">OPEN-SOURCE</p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-3 py-1.5 bg-white/10 text-white text-xs rounded-lg border border-white/20">DeepSeek</span>
+                      <span className="px-3 py-1.5 bg-white/10 text-white text-xs rounded-lg border border-white/20">Qwen</span>
+                      <span className="px-3 py-1.5 bg-white/10 text-white text-xs rounded-lg border border-white/20">Kimi</span>
+                      <span className="px-3 py-1.5 bg-white/10 text-white text-xs rounded-lg border border-white/20">Llama</span>
+                    </div>
+                  </div>
+                </div>
+                <button className="w-full bg-[#FF9A6C] text-white px-6 py-3 rounded-xl font-medium hover:bg-[#FF8454] transition-colors">
+                  View All Models
+                </button>
+              </div>
+
+              <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all border border-[#FF9A6C]/30">
+                <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-emerald-500 rounded-3xl flex items-center justify-center mb-6">
+                  <Target className="w-10 h-10 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">Higher Quality</h3>
+                <p className="text-gray-300 leading-relaxed mb-6">
+                  90-98% accuracy with context-aware neural translation
+                </p>
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
+                    <span className="text-sm text-gray-300">Context-aware translation</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
+                    <span className="text-sm text-gray-300">Neural network powered</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
+                    <span className="text-sm text-gray-300">Beats basic LibreTranslate</span>
+                  </div>
+                </div>
+                <div className="flex gap-2 text-xs">
+                  <span className="px-3 py-1 bg-green-400/20 text-green-400 rounded-full border border-green-400/30">90-98% Accurate</span>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all border border-[#FF9A6C]/30">
+                <div className="w-20 h-20 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-3xl flex items-center justify-center mb-6">
+                  <Zap className="w-10 h-10 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">No Setup Hassle</h3>
+                <p className="text-gray-300 leading-relaxed mb-6">
+                  Hosted backend proxy - add your site once
+                </p>
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-blue-400 flex-shrink-0" />
+                    <span className="text-sm text-gray-300">No API keys exposed</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-blue-400 flex-shrink-0" />
+                    <span className="text-sm text-gray-300">Secure backend proxy</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-blue-400 flex-shrink-0" />
+                    <span className="text-sm text-gray-300">One-time setup</span>
+                  </div>
+                </div>
+                <div className="flex gap-2 text-xs">
+                  <span className="px-3 py-1 bg-blue-400/20 text-blue-400 rounded-full border border-blue-400/30">Plug & Play</span>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all border border-[#FF9A6C]/30">
+                <div className="w-20 h-20 bg-gradient-to-br from-purple-400 to-pink-500 rounded-3xl flex items-center justify-center mb-6">
+                  <Gift className="w-10 h-10 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">Extra Features</h3>
+                <p className="text-gray-300 leading-relaxed mb-6">
+                  Unlimited usage with premium capabilities
+                </p>
+                <div className="space-y-2 mb-6">
+                  <div className="flex items-center gap-2">
+                    <Zap className="w-4 h-4 text-[#FF9A6C] flex-shrink-0" />
+                    <span className="text-sm text-gray-300">Real-time translation</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Globe className="w-4 h-4 text-[#FF9A6C] flex-shrink-0" />
+                    <span className="text-sm text-gray-300">Custom glossaries</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <TrendingUp className="w-4 h-4 text-[#FF9A6C] flex-shrink-0" />
+                    <span className="text-sm text-gray-300">Analytics & SEO</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Shield className="w-4 h-4 text-[#FF9A6C] flex-shrink-0" />
+                    <span className="text-sm text-gray-300">Priority support</span>
+                  </div>
+                </div>
+                <div className="flex gap-2 text-xs">
+                  <span className="px-3 py-1 bg-purple-400/20 text-purple-400 rounded-full border border-purple-400/30">No Limits</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8 text-center">
+              <button className="inline-flex items-center gap-3 bg-gradient-to-r from-[#FF9A6C] to-[#FF7A4C] text-white px-10 py-4 rounded-2xl font-bold text-lg hover:shadow-xl transition-all group">
+                Upgrade to Pro
+                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+              </button>
             </div>
           </div>
 
