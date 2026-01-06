@@ -2,6 +2,9 @@
 
 A beautiful, production-ready translation widget for React applications. Translate your website content into multiple languages with a simple, easy-to-use component.
 
+
+
+
 ## Features
 
 - **Smart DOM Translation**: Preserves HTML structure, styles, and interactive elements
